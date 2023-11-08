@@ -1,0 +1,15 @@
+Epoch 1, Loss: 4.7756853103637695
+Validation Accuracy: 0.6862745098039216%
+Validation Loss: 4.626431465148926
+Epoch 2, Loss: 4.720826148986816
+Validation Accuracy: 0.7843137254901961%
+Validation Loss: 4.628983497619629
+Epoch 3, Loss: 4.666910886764526
+Validation Accuracy: 1.4705882352941178%
+Validation Loss: 4.631720542907715
+Epoch 4, Loss: 4.598641633987427
+Validation Accuracy: 2.549019607843137%
+Validation Loss: 4.633922576904297
+Early stopping at epoch 4 (Best epoch: 1)
+Test Loss: 1419.4813
+Test Accuracy: 0.0289

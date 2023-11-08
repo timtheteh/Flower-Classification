@@ -1,0 +1,15 @@
+Epoch 1/10 | Train Loss: 479.1596% | Val Loss: 462.9201%
+Train Accuracy: 0.5882% | Val Accuracy: 0.9804%
+Epoch 2/10 | Train Loss: 462.7728% | Val Loss: 462.5776%
+Train Accuracy: 0.8824% | Val Accuracy: 0.9804%
+Epoch 3/10 | Train Loss: 457.9342% | Val Loss: 462.0847%
+Train Accuracy: 0.9804% | Val Accuracy: 1.0784%
+Epoch 4/10 | Train Loss: 455.6877% | Val Loss: 468.7749%
+Train Accuracy: 1.1765% | Val Accuracy: 1.2745%
+Epoch 5/10 | Train Loss: 452.7759% | Val Loss: 481.7674%
+Train Accuracy: 1.4706% | Val Accuracy: 0.9804%
+Epoch 6/10 | Train Loss: 453.7574% | Val Loss: 479.6077%
+Train Accuracy: 1.5686% | Val Accuracy: 1.8627%
+Early stopping. No improvement in validation loss.
+Test Accuracy: 1.5287038542852496%
+Test Loss: 476.82275154430016%

@@ -1,0 +1,18 @@
+Epoch 1, Loss: 4.689921677112579
+Validation Accuracy: 1.7647058823529411%
+Validation Loss: 4.623766899108887
+Epoch 2, Loss: 4.475046396255493
+Validation Accuracy: 3.0392156862745097%
+Validation Loss: 4.490850448608398
+Epoch 3, Loss: 4.295406341552734
+Validation Accuracy: 5.882352941176471%
+Validation Loss: 4.151676177978516
+Epoch 4, Loss: 4.197077810764313
+Validation Accuracy: 8.72549019607843%
+Validation Loss: 3.968684673309326
+Epoch 5, Loss: 4.1171663999557495
+Validation Accuracy: 9.019607843137255%
+Validation Loss: 3.8860461711883545
+Epoch 6, Loss: 4.032093167304993
+Validation Accuracy: 10.686274509803921%
+Validation Loss: 3.717172622680664

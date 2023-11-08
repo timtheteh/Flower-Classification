@@ -1,0 +1,114 @@
+Epoch 0/99
+----------
+Train Loss: 4.6006 Acc: 0.0186
+Val Loss: 4.3753 Acc: 0.0422
+Epoch 1/99
+----------
+Train Loss: 4.1008 Acc: 0.0843
+Val Loss: 3.9506 Acc: 0.1167
+Epoch 2/99
+----------
+Train Loss: 3.6665 Acc: 0.1696
+Val Loss: 3.6405 Acc: 0.1686
+Epoch 3/99
+----------
+Train Loss: 3.2860 Acc: 0.2422
+Val Loss: 3.4013 Acc: 0.2029
+Epoch 4/99
+----------
+Train Loss: 2.9582 Acc: 0.2853
+Val Loss: 3.2184 Acc: 0.2186
+Epoch 5/99
+----------
+Train Loss: 2.6418 Acc: 0.3686
+Val Loss: 3.1708 Acc: 0.2333
+Epoch 6/99
+----------
+Train Loss: 2.4051 Acc: 0.4265
+Val Loss: 3.1075 Acc: 0.2422
+Epoch 7/99
+----------
+Train Loss: 2.1344 Acc: 0.5118
+Val Loss: 2.9396 Acc: 0.2843
+Epoch 8/99
+----------
+Train Loss: 1.8882 Acc: 0.5608
+Val Loss: 2.8246 Acc: 0.3049
+Epoch 9/99
+----------
+Train Loss: 1.6985 Acc: 0.6157
+Val Loss: 2.8467 Acc: 0.2961
+Epoch 10/99
+----------
+Train Loss: 1.4409 Acc: 0.6980
+Val Loss: 2.6945 Acc: 0.3431
+Epoch 11/99
+----------
+Train Loss: 1.2418 Acc: 0.7647
+Val Loss: 2.6701 Acc: 0.3471
+Epoch 12/99
+----------
+Train Loss: 1.0542 Acc: 0.7892
+Val Loss: 2.5132 Acc: 0.4020
+Epoch 13/99
+----------
+Train Loss: 0.8394 Acc: 0.8686
+Val Loss: 2.6592 Acc: 0.3520
+Epoch 14/99
+----------
+Train Loss: 0.6872 Acc: 0.9108
+Val Loss: 2.5399 Acc: 0.3931
+Epoch 15/99
+----------
+Train Loss: 0.5225 Acc: 0.9549
+Val Loss: 2.5919 Acc: 0.3725
+Early stopping triggered
+Training complete in 334m 29s
+Epoch 1, Loss: 0.4668806893751025
+Validation Accuracy: 39.80392156862745%
+Validation Loss: 2.521960496902466
+Epoch 2, Loss: 0.32438828935846686
+Validation Accuracy: 41.27450980392157%
+Validation Loss: 2.418159246444702
+Epoch 3, Loss: 0.23226031567901373
+Validation Accuracy: 42.64705882352941%
+Validation Loss: 2.3140063285827637
+Epoch 4, Loss: 0.1790511009749025
+Validation Accuracy: 42.254901960784316%
+Validation Loss: 2.4220199584960938
+Epoch 5, Loss: 0.17295451345853508
+Validation Accuracy: 43.431372549019606%
+Validation Loss: 2.337827682495117
+Epoch 6, Loss: 0.10527860326692462
+Validation Accuracy: 43.627450980392155%
+Validation Loss: 2.292863130569458
+Epoch 7, Loss: 0.11472815170418471
+Validation Accuracy: 43.529411764705884%
+Validation Loss: 2.280984401702881
+Epoch 8, Loss: 0.09755173732992262
+Validation Accuracy: 43.8235294117647%
+Validation Loss: 2.3243448734283447
+Epoch 9, Loss: 0.07199007098097354
+Validation Accuracy: 46.27450980392157%
+Validation Loss: 2.2481296062469482
+Epoch 10, Loss: 0.05942017846973613
+Validation Accuracy: 44.6078431372549%
+Validation Loss: 2.277825117111206
+Epoch 11, Loss: 0.06012876133900136
+Validation Accuracy: 44.705882352941174%
+Validation Loss: 2.241917133331299
+Epoch 12, Loss: 0.04921692656353116
+Validation Accuracy: 45.588235294117645%
+Validation Loss: 2.216203451156616
+Epoch 13, Loss: 0.055045509652700275
+Validation Accuracy: 45.3921568627451%
+Validation Loss: 2.2488951683044434
+Epoch 14, Loss: 0.048873310326598585
+Validation Accuracy: 46.372549019607845%
+Validation Loss: 2.24706768989563
+Epoch 15, Loss: 0.04236617166316137
+Validation Accuracy: 45.68627450980392%
+Validation Loss: 2.230753183364868
+Early stopping at epoch 15 (Best epoch: 12)
+Test Loss: 80.9641
+Test Accuracy: 0.4097

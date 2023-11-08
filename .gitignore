@@ -1,0 +1,5 @@
+*.pth
+/__pycache__
+/Deformable-Convolution-V2-PyTorch
+/data
+*.sh
