@@ -17,15 +17,18 @@ def read_val(file):
 		epoch_part = parts[0]
 		epoch_number = int(epoch_part.split(" ")[1])
 
-		line = lines[i+2]
-		loss = float(line.split(": ")[1].strip("%\n"))
+		if i+2 < len(lines):
+			line = lines[i+2]
+			loss = float(line.split(": ")[1].strip("%\n"))
 
-		line = lines[i+1]
-		accuracy = float(line.split(": ")[1].strip("%\n"))
+		if i+1 < len(lines):
+			line = lines[i+1]
+			accuracy = float(line.split(": ")[1].strip("%\n"))
 
-		epochs.append(epoch_number)
-		losses.append(loss)
-		accuracies.append(accuracy)
+		if i+2 < len(lines):
+			epochs.append(epoch_number)
+			losses.append(loss)
+			accuracies.append(accuracy)
 	
 	
 	return {"epoch": epochs, "loss": losses, "acc": accuracies}
@@ -57,4 +60,25 @@ def plot_resnets(d1, d2, d3, mode):
 	plt.savefig('untrained_trans_deform_'+mode+'_plot.png')
 	plt.show()
 
+
+def plot_2(d1, d2, mode):
+	if mode == "acc":
+		y1 = d1["acc"]
+		y2 = d2["acc"]
+	elif mode == "loss":
+		y1 = d1["loss"]
+		y2 = d2["loss"]
 	
+	plt.plot(d1["epoch"], y1, label='3 groups', marker='.')
+	plt.plot(d2["epoch"], y2, label='4 groups', marker='.')
+
+	plt.xlabel('Epoch')
+	if mode == "acc":
+		plt.ylabel('Accuracy (%)')
+	elif mode == "loss":
+		plt.ylabel('Loss')
+	plt.title(f'Validation {mode} vs Epoch')
+	plt.legend()
+
+	plt.savefig('untrained_notrans_deform_'+mode+'_plot.png')
+	plt.show()

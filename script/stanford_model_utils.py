@@ -32,14 +32,25 @@ class MyModel(nn.Module):
 		self.conv3 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1, bias=False)
 		# relu
 		# maxpool 
-		self.conv4 = nn.Conv2d(128, 256, kernel_size=3, stride=1, padding=1, bias=False)
+		self.conv4 = nn.Conv2d(128, 252, kernel_size=3, stride=1, padding=1, bias=False)
 		# relu
 		# maxpool 
 
-		self.offset = nn.Conv2d(256, out_channels=256, kernel_size=3, stride=1, padding=1, bias=False)
-		self.regular_conv = nn.Conv2d(256, out_channels=256, kernel_size=3, stride=1, padding=1, bias=False)
+		self.conv5 = nn.Conv2d(128, 256, kernel_size=4, stride=1, padding=1, bias=True)
+		self.conv6 = nn.Conv2d(256, 512, kernel_size=5, stride=1, padding=1, bias=True)
+		self.conv7 = nn.Conv2d(512, 1024, kernel_size=6, stride=1, padding=1, bias=True)
+		self.conv8 = nn.Conv2d(1024, 512, kernel_size=7, stride=1, padding=1, bias=True)
+		self.conv9 = nn.Conv2d(512, 252, kernel_size=3, stride=1, padding=1, bias=True)
 
-		self.fc = nn.Linear(256, 102)
+
+		self.offset1 = nn.Conv2d(252, out_channels=252, kernel_size=3, stride=1, padding=1, bias=False)
+		self.regular_conv = nn.Conv2d(252, out_channels=256, kernel_size=3, stride=1, padding=1, bias=False)
+		
+		self.fc1 = nn.Linear(4096, 512)
+		self.fc2 = nn.Linear(512, 102)
+
+		self.fc3 = nn.Linear(4032, 672)
+		self.fc4 = nn.Linear(672, 102)
 	
 	def forward(self, x):
 		x = self.conv1(x)
@@ -57,7 +68,32 @@ class MyModel(nn.Module):
 		x = self.conv4(x)
 		x = self.relu(x)
 		x = self.maxpool(x)
-		offset = self.offset(x)
+
+		x = self.conv5(x)
+		x = self.relu(x)
+		x = self.maxpool(x)
+		x = self.conv6(x)
+		x = self.relu(x)
+		x = self.maxpool(x)
+		x = self.conv7(x)
+		x = self.relu(x)
+		x = self.maxpool(x)
+		x = self.conv8(x)
+		x = self.relu(x)
+		x = self.maxpool(x)
+		x = self.conv9(x)
+		x = self.relu(x)
+		x = self.maxpool(x)
+		#print(x.shape)
+		#print(self.offset1)
+		#print(self.offset1.weight.shape)
+		#print(self.offset1.in_channels)
+		# offset = self.offset1(x)
+		#print("GOT offset")
+		#print(offset.shape)
+		#print(x.shape)
+		#print(self.regular_conv.weight.shape)
+		"""
 		x = deform_conv2d(input=x,
 												offset=offset,
 												weight=self.regular_conv.weight,
@@ -65,10 +101,20 @@ class MyModel(nn.Module):
 												padding=1,
 												mask=None,
 												stride=1)
+		"""
+		#print("DONE deform")
+		#print(x.shape)
 		x = x.view(x.size(0), -1)
-		x = self.fc(x)
+		#print(x.shape)
+		# x = self.fc1(x)
+		#print(x.shape)
+		# x = self.fc2(x)
+		x = self.fc3(x)
+		x = self.fc4(x)
+		return nn.functional.softmax(x, dim=1)
 
-def train_val(model, train_loader, val_loader, name, lr=0.01, gamma=0.9, num_epochs=40):
+
+def train_val(model, train_loader, val_loader, name, lr=0.01, gamma=0.9, num_epochs=100):
 	# Loss and optimizer
 	criterion = nn.CrossEntropyLoss()
 	optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
@@ -81,7 +127,6 @@ def train_val(model, train_loader, val_loader, name, lr=0.01, gamma=0.9, num_epo
 	no_improvement_count = 0
 
 	# Training loop
-	num_epochs = 40
 	device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 	model.to(device)
@@ -115,6 +160,8 @@ def train_val(model, train_loader, val_loader, name, lr=0.01, gamma=0.9, num_epo
 					outputs = model(inputs)
 
 					_, predicted = torch.max(outputs, 1)
+					if epoch <3:
+						print(predicted, labels)
 					total += labels.size(0)
 					correct += (predicted == labels).sum().item()
 					validation_loss += criterion(outputs, labels)
